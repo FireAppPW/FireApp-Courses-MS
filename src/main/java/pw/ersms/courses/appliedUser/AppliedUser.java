@@ -25,7 +25,7 @@ public class AppliedUser {
             strategy = GenerationType.SEQUENCE,
             generator = "AppliedUser_id_seq"
     )
-    private Integer courseId, userId;
+    private Integer courseId;
 
     @Column(name = "user_full_name", nullable = false, length = Integer.MAX_VALUE)
     private String userFullName;
