@@ -16,16 +16,8 @@ import java.time.LocalDateTime;
 @Setter
 public class AppliedUser {
 
-    @Id
-    @SequenceGenerator(
-            name = "AppliedUser_id_seq",
-            sequenceName = "AppliedUser_id_seq"
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "AppliedUser_id_seq"
-    )
-    private Integer courseId;
+    @EmbeddedId
+    private AppliedUserId id;
 
     @Column(name = "user_full_name", nullable = false, length = Integer.MAX_VALUE)
     private String userFullName;
