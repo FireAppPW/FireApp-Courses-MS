@@ -16,16 +16,13 @@ import java.util.Objects;
 public class AppliedUserId implements Serializable {
     private static final long serialVersionUID = -5737736616833641513L;
 
+    @NotNull
     @Column(name = "course_id", nullable = false)
     private Integer courseId;
 
+    @NotNull
     @Column(name = "user_id", nullable = false)
     private Integer userId;
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(courseId, userId);
-    }
 
     @Override
     public boolean equals(Object obj) {
@@ -38,5 +35,10 @@ public class AppliedUserId implements Serializable {
         return Objects.equals(this.courseId, entity.courseId) &&
                 Objects.equals(this.userId, entity.userId);
 
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(courseId, userId);
     }
 }
