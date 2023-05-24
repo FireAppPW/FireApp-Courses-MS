@@ -39,4 +39,4 @@ jobs:
             sudo docker pull giangh14cqt/fireapp-be-course:latest
             sudo docker stop fireapp-be-course
             sudo docker rm fireapp-be-course
-            sudo docker run -d --name fireapp-be-course --network host --env-file .department_env giangh14cqt/fireapp-be-course:latest
+            sudo docker run -d --name fireapp-be-course --network host --env-file .course_env giangh14cqt/fireapp-be-course:latest
