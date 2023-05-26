@@ -5,9 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.NoSuchElementException;
 
 @Service
@@ -59,8 +57,6 @@ public class CourseService {
     }
 
     public Object updateCourse(Integer id, @NotNull Course course){
-        if(!courseRepository.existsById(id))
-            throw new NoSuchElementException("Course not found with id " + id);
         if(course.getTitle() == null || course.getTitle().isEmpty())
             throw new IllegalArgumentException("Title cannot be null or empty");
         if(course.getDescription() == null || course.getDescription().isEmpty())
@@ -76,13 +72,5 @@ public class CourseService {
         course.setIsDeleted(false);
 
         return courseRepository.save(course);
-    }
-
-    public Object getCourse(){
-        Map<String, Object> resp = new HashMap<>();
-        resp.put("success", true);
-        resp.put("message", "Successful fetching data");
-
-        return resp;
     }
 }
