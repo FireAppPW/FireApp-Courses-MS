@@ -10,8 +10,8 @@ import org.hibernate.Hibernate;
 import java.io.Serializable;
 import java.util.Objects;
 
-@Getter
-@Setter
+//@Getter
+//@Setter
 @Embeddable
 public class AppliedUserId implements Serializable {
     private static final long serialVersionUID = -5737736616833641513L;
