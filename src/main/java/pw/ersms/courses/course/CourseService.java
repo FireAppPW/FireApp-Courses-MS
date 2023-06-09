@@ -70,7 +70,7 @@ public class CourseService {
         if(course.getCity() == null || course.getCity().isEmpty())
             throw new IllegalArgumentException("City cannot be null or empty");
 
-        course.setId(null);
+        course.setId(id);
         course.setIsPublic(false);
         course.setIsRemote(false);
         course.setIsDeleted(false);
