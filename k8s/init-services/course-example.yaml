@@ -1,0 +1,18 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+    labels:
+        app: course-example
+    name: course-example
+    namespace: default
+spec:
+    ports:
+        - name: "http"
+          protocol: TCP
+          port: 8082
+          targetPort: 8082
+    selector:
+        App: backend
+status:
+    loadBalancer: {}
